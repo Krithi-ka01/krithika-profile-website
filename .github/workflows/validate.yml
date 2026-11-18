@@ -1,9 +1,8 @@
-
 name: Validate HTML and CSS
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, ci/setup-validation]
 
   pull_request:
     branches: [main]
@@ -24,10 +23,10 @@ jobs:
       - name: Install validation tools
         run: |
           npm install -g htmlhint
-          npm install -g csslint
+          npm install --no-save stylelint stylelint-config-recommended
 
       - name: Validate HTML files
         run: htmlhint "*.html" --config .htmlhintrc
 
       - name: Validate CSS files
-        run: csslint css/*.css --quiet
+        run: npx stylelint "css/*.css" --config .stylelintrc.json
