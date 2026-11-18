@@ -2,7 +2,7 @@ name: Validate HTML and CSS
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, ci/setup-validation]
 
   pull_request:
     branches: [main]
