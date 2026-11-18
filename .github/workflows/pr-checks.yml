@@ -11,6 +11,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
+      - name: Check HTML has a title tag
+        shell: bash
+        run: |
+          if ! grep -qiE '<title[^>]*>[^<]+</title>' index.html; then
+            echo "HTML title tag is missing or empty."
+            exit 1
+          fi
+          echo "HTML title check passed."
+
       - name: Check HTML has alt attributes on images
         shell: bash
         run: |
