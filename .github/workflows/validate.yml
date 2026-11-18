@@ -1,0 +1,19 @@
+name: Validate HTML and CSS
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML structure
+        uses: html-validate/action@v2
+        with:
+          files: "index.html"

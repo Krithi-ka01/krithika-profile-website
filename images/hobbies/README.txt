@@ -1,0 +1,1 @@
+The five original sketch photographs are included as sketch-01.jpg through sketch-05.jpg in the order uploaded: anime, fox, butterfly, chibi, elephant. The gallery uses contain sizing to preserve each image's proportions and prevent zooming/cropping.

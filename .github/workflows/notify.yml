@@ -1,0 +1,16 @@
+name: Deployment Notification
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report deployment result
+        run: |
+          echo "Deployment workflow completed with conclusion: ${{ github.event.workflow_run.conclusion }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow run: ${{ github.event.workflow_run.html_url }}"

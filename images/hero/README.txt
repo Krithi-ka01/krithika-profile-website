@@ -1,0 +1,1 @@
+The current hero artwork is Krithika's butterfly pencil sketch. Replace profile.jpg with a professional portrait later if desired. The image is displayed with contain sizing so it is not zoomed or cropped.

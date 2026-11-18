@@ -1,0 +1,39 @@
+/* Krithika G. portfolio theme tokens */
+:root {
+  color-scheme: light;
+  --color-bg: #fff8dc;
+  --color-bg-soft: #fff1c2;
+  --color-gallery: #f8e6a8;
+  --color-gallery-ink: #60451f;
+  --color-surface: #fffdf3;
+  --color-text: #29271f;
+  --color-text-soft: #71664f;
+  --color-primary: #76501f;
+  --color-accent: #a56c2d;
+  --color-border: #ead7a1;
+  --color-dark: #29271f;
+  --color-light: #fff8dc;
+  --content-width: 1180px;
+  --radius-small: 10px;
+  --radius-large: 22px;
+  --shadow-soft: 0 18px 50px rgba(91, 72, 30, .12);
+  --transition: 260ms ease;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #242522;
+  --color-bg-soft: #2d2e29;
+  --color-gallery: #383326;
+  --color-gallery-ink: #f1dfb7;
+  --color-surface: #30312c;
+  --color-text: #f4eddd;
+  --color-text-soft: #c4b99f;
+  --color-primary: #e4c58c;
+  --color-accent: #d2a66a;
+  --color-border: #514a39;
+  --color-dark: #f4eddd;
+  --color-light: #242522;
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, .28);
+}
+html { color-scheme: light; }
+:root[data-theme="dark"] html { color-scheme: dark; }

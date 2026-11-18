@@ -1,0 +1,41 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  basic-quality-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check HTML has alt attributes on images
+        shell: bash
+        run: |
+          if grep -nE '<img[^>]*>' index.html | grep -vi 'alt='; then
+            echo "An image is missing an alt attribute."
+            exit 1
+          fi
+          echo "Image alt-attribute check passed."
+
+      - name: Check for accidental console.log statements
+        shell: bash
+        run: |
+          if grep -n "console\.log" js/*.js; then
+            echo "Remove debugging console.log statements before merging."
+            exit 1
+          fi
+          echo "No console.log statements found."
+
+      - name: Check pull request title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        shell: bash
+        run: |
+          if [ -z "$PR_TITLE" ]; then
+            echo "Pull request title is required."
+            exit 1
+          fi
+          echo "Pull request title: $PR_TITLE"
